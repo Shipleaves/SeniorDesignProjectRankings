@@ -1,0 +1,20 @@
+﻿1: LEAP Games
+2: Drone Racing System
+3: Photo Contest App
+4: Compression Reserach
+5: Discovering Models from Big Data
+6: Massively Parallel Computing using Memristors
+7: Attacking Machine Learning Algorithms
+8: Computational Methods in Finance
+9: Limbitless Website and Mobile Apps
+10: Limbitless 2D/3D Arm Visualization App
+11: Limbitless Racecar Game
+12: Selection and Enhancement of Wildlife Photos
+13: Orlando City Soccer Data Analysis
+14: United Launch Alliance Mission Scheduling
+15: Code Park
+16: Blockchain Medicine Tracking
+17: Natural Language Processing for Patients
+18: Code Challenges Website
+19: NASA Mars Simulation
+EOF
