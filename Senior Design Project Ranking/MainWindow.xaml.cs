@@ -9,7 +9,7 @@
  * what project to do so that they can see what kind of projects had positive 
  * responses, as well as provide some solace for students who don't get their 
  * first choice because 50% of the class also had the same project as their 
- * first choice.
+ * first choice. 
  */
 
 namespace Senior_Design_Project_Ranking
