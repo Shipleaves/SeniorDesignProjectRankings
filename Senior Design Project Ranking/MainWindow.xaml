@@ -22,6 +22,7 @@
 			<ColumnDefinition/>
 		</Grid.ColumnDefinitions>
 
+		<Button Content="Reset" Click="ResetButton_Click" Width="110" Height="30" VerticalAlignment="Bottom" Margin="10"/>
 		<StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="10,0,0,10">
 			<CheckBox Name="CustomProjectCheckBox" Content="I am doing a custom project" IsChecked="{Binding CustomProject}" />
 			<Label Content="Enter the project name:" Visibility="{Binding Path=CustomProject, Converter={StaticResource booleanToVisibilityConverter}}"/>
@@ -29,20 +30,20 @@
 		</StackPanel>
 
 		<Label Content="Project Rankings" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-		<ListBox Name="ProjectRankingsListBox" ItemsSource="{Binding ProjectRankings}" Grid.Row="1" Grid.Column="0" Margin="35,25,10,30" SelectionMode="Extended"/>
+		<ListBox Name="ProjectRankingsListBox" KeyDown="ProjectRankingsListBox_KeyDown" ItemsSource="{Binding ProjectRankings}" Grid.Row="1" Grid.Column="0" Margin="35,25,10,30" SelectionMode="Extended"/>
 		<Button Content="^" Click="IncreaseRankButton_Click" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,25" Width="20"/>
 		<Button Content="v" Click="DecreaseRankButton_Click" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,25,0,0" Width="20"/>
 
 
 		<Label Content="Project List" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-		<ListBox Name="ProjectsListBox" ItemsSource="{Binding Path=ProjectList}" SelectionChanged="ProjectsListBox_SelectionChanged" Grid.Row="1" Grid.Column="1" Margin="35,25,10,30" SelectionMode="Extended"/>
+		<ListBox Name="ProjectsListBox" KeyDown="ProjectsListBox_KeyDown" ItemsSource="{Binding Path=ProjectList}" SelectionChanged="ProjectsListBox_SelectionChanged" Grid.Row="1" Grid.Column="1" Margin="35,25,10,30" SelectionMode="Extended"/>
 		<Button Content="&lt;-" Click="AddProjectButton_Click" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,25" Width="30"/>
 		<Button Content="-&gt;" Click="RemoveProjectButton_Click" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,25,0,0" Width="30"/>
 
 		<Label Content="Project Description" Grid.Row="1" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Center"/>
 		<TextBox Name="ProjectDescriptionTextBox" Grid.Row="1" Grid.Column="2" Margin="10,25,35,30" Background="LightGray"/>
 
-		<Button Content="Export to Desktop" Click="ExportButton_Click" Grid.Row="2" Grid.Column="1" Width="110" Height="30"/>
+		<Button Content="Finish" Click="ExportButton_Click" Grid.Row="2" Grid.Column="1" Width="110" Height="30"/>
 		<CheckBox Content="Do not send anonymized data for statistics" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" IsChecked="{Binding OptOut}"/>
 	</Grid>
 </Window>

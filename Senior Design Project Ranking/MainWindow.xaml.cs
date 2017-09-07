@@ -109,8 +109,6 @@ namespace Senior_Design_Project_Ranking
             {
                 using (StreamWriter outputFile = new StreamWriter(@"./COP4934ProjectRankings.txt"))
                 {
-                    outputFile.WriteLine(this.UserName.Text);
-
                     int count = 0;
                     foreach (string line in ProjectRankings)
                     {
@@ -131,36 +129,6 @@ namespace Senior_Design_Project_Ranking
             {
                 try
                 {
-                    /*using (StreamWriter outputFile = new StreamWriter(@"./AnonymizedProjectRankings.txt"))
-                    {
-                        int count = 0;
-                        foreach (string line in ProjectRankings)
-                        {
-                            outputFile.WriteLine(count + ": " + line);
-                            count++;
-                        }
-                    }
-
-                    StreamReader sr = new StreamReader(@"./AnonymizedProjectRankings.txt");
-
-                    TcpClient tcpClient = new TcpClient();
-                    tcpClient.Connect(new IPEndPoint(IPAddress.Parse("99.128.0.174"), 5442));
-
-                    byte[] buffer = new byte[1500];
-                    long bytesSent = 0;
-
-                    while (bytesSent < sr.BaseStream.Length)
-                    {
-                        int bytesRead = sr.BaseStream.Read(buffer, 0, 1500);
-                        tcpClient.GetStream().Write(buffer, 0, bytesRead);
-                        Console.WriteLine(bytesRead + " bytes sent.");
-
-                        bytesSent += bytesRead;
-                    }
-
-                    tcpClient.Close();
-                    */
-
                     // Get the macaddress to identify duplicate submissions
                     string macAddr =
                         (
@@ -257,6 +225,7 @@ namespace Senior_Design_Project_Ranking
             this.Export();
         }
 
+        // Load the project description for the selected project
         private void ProjectsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             try
@@ -283,6 +252,78 @@ namespace Senior_Design_Project_Ranking
                     ProjectRankings.Insert(0, "Custom: " + customProjectName);
                 }
             }
+        }
+
+        private void ProjectRankingsListBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            ListBox caller = ((ListBox)sender);
+            string[] selectedItems = new string[this.ProjectRankingsListBox.SelectedItems.Count];
+            this.ProjectRankingsListBox.SelectedItems.CopyTo(selectedItems, 0);
+
+            switch (e.Key)
+            {
+                case Key.Delete:
+                    ProjectRankings.Remove(caller.SelectedItem.ToString());
+                    ProjectsListBox.Items.Add(caller.SelectedItem);
+                    break;
+
+                case Key.Left:
+                    // Do nothing
+                    break;
+
+                case Key.Up:
+                    foreach (string project in this.ProjectRankingsListBox.SelectedItems)
+                    {
+                        int currentIndex = ProjectRankings.IndexOf(project);
+                        if (currentIndex > 0)
+                        {
+                            ProjectRankings.Move(currentIndex, currentIndex - 1);
+                        }
+                    }
+                    break;
+
+                case Key.Right:
+                    foreach (string project in selectedItems)
+                    {
+                        this.ProjectRankings.Remove(project);
+                        this.ProjectsListBox.Items.Add(project);
+                    }
+                    break;
+
+                case Key.Down:
+                    foreach (string project in this.ProjectRankingsListBox.SelectedItems)
+                    {
+                        int currentIndex = ProjectRankings.IndexOf(project);
+                        if (currentIndex < ProjectRankings.Count - 1)
+                        {
+                            ProjectRankings.Move(currentIndex, currentIndex + 1);
+                        }
+                    }
+                    break;
+            }
+        }
+
+        private void ProjectsListBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Left)
+            {
+                ListBox caller = ((ListBox)sender);
+                string[] selectedItems = new string[this.ProjectsListBox.SelectedItems.Count];
+                this.ProjectsListBox.SelectedItems.CopyTo(selectedItems, 0);
+
+                foreach (string project in selectedItems)
+                {
+                    this.ProjectRankings.Add(project);
+                    this.ProjectsListBox.Items.Remove(project);
+                }
+            }
+        }
+
+        private void ResetButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.ProjectRankings.Clear();
+            this.ProjectsListBox.Items.Clear();
+            this.LoadProjects();
         }
 
         private void OnPropertyChanged(string propertyName)
