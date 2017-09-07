@@ -61,25 +61,360 @@ namespace Senior_Design_Project_Ranking.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 1: LEAP Games
-        ///2: Drone Racing System
-        ///3: Photo Contest App
-        ///4: Compression Reserach
-        ///5: Discovering Models from Big Data
-        ///6: Massively Parallel Computing using Memristors
-        ///7: Attacking Machine Learning Algorithms
-        ///8: Computational Methods in Finance
-        ///9: Limbitless Website and Mobile Apps
-        ///10: Limbitless 2D/3D Arm Visualization App
-        ///11: Limbitless Racecar Game
-        ///12: Selection and Enhancement of Wildlife Photos
-        ///13: Orlando City Soccer Data Analysis
-        ///14: United Launch Alliance Mission Scheduling
-        ///15: Code Par [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string AndonSignalsandProcess {
+            get {
+                return ResourceManager.GetString("AndonSignalsandProcess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string ARTPROJECTS {
+            get {
+                return ResourceManager.GetString("ARTPROJECTS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string AttackingMachineLearningAlgorithms {
+            get {
+                return ResourceManager.GetString("AttackingMachineLearningAlgorithms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string AutoSolarAwning {
+            get {
+                return ResourceManager.GetString("AutoSolarAwning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Balloon_basedReducedGravity {
+            get {
+                return ResourceManager.GetString("Balloon_basedReducedGravity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string BlockchainMedicineTracking {
+            get {
+                return ResourceManager.GetString("BlockchainMedicineTracking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string CodeChallengesWebsite {
+            get {
+                return ResourceManager.GetString("CodeChallengesWebsite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string CodePark {
+            get {
+                return ResourceManager.GetString("CodePark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string CollaborationLearningGamewithDataAnalysis {
+            get {
+                return ResourceManager.GetString("CollaborationLearningGamewithDataAnalysis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string CompressionReserach {
+            get {
+                return ResourceManager.GetString("CompressionReserach", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string ComputationalMethodsinFinance {
+            get {
+                return ResourceManager.GetString("ComputationalMethodsinFinance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string CriticalThinkingGame {
+            get {
+                return ResourceManager.GetString("CriticalThinkingGame", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string CulturalVR {
+            get {
+                return ResourceManager.GetString("CulturalVR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string DiscoveringModelsfromBigData {
+            get {
+                return ResourceManager.GetString("DiscoveringModelsfromBigData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Drone_basedReducedGravity {
+            get {
+                return ResourceManager.GetString("Drone_basedReducedGravity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string DroneRacingSystem {
+            get {
+                return ResourceManager.GetString("DroneRacingSystem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string FoamDeposition3DPrinter {
+            get {
+                return ResourceManager.GetString("FoamDeposition3DPrinter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string LEAPGames {
+            get {
+                return ResourceManager.GetString("LEAPGames", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Limbitless2D_3DArmVisualizationApp {
+            get {
+                return ResourceManager.GetString("Limbitless2D_3DArmVisualizationApp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string LimbitlessRacecarGame {
+            get {
+                return ResourceManager.GetString("LimbitlessRacecarGame", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string LimbitlessWebsiteandMobileApps {
+            get {
+                return ResourceManager.GetString("LimbitlessWebsiteandMobileApps", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string MappingGameMechanicstoLearningObjectives {
+            get {
+                return ResourceManager.GetString("MappingGameMechanicstoLearningObjectives", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string MassivelyParallelComputingusingMemristors {
+            get {
+                return ResourceManager.GetString("MassivelyParallelComputingusingMemristors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string NASAMarsSimulation {
+            get {
+                return ResourceManager.GetString("NASAMarsSimulation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string NaturalLanguageProcessingforPatients {
+            get {
+                return ResourceManager.GetString("NaturalLanguageProcessingforPatients", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string NextGenAssetTracking {
+            get {
+                return ResourceManager.GetString("NextGenAssetTracking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string OrlandoCitySoccerDataAnalysis {
+            get {
+                return ResourceManager.GetString("OrlandoCitySoccerDataAnalysis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string PhotoContestApp {
+            get {
+                return ResourceManager.GetString("PhotoContestApp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LEAP Games
+        ///Drone Racing System
+        ///Photo Contest App
+        ///Compression Reserach
+        ///Discovering Models from Big Data
+        ///Massively Parallel Computing using Memristors
+        ///Attacking Machine Learning Algorithms
+        ///Computational Methods in Finance
+        ///Limbitless Website and Mobile Apps
+        ///Limbitless 2D_3D Arm Visualization App
+        ///Limbitless Racecar Game
+        ///Selection and Enhancement of Wildlife Photos
+        ///Orlando City Soccer Data Analysis
+        ///United Launch Alliance Mission Scheduling
+        ///Code Park
+        ///Blockchain Medicine Tracking
+        ///Natural Language P [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ProjectList {
             get {
                 return ResourceManager.GetString("ProjectList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Robocopters {
+            get {
+                return ResourceManager.GetString("Robocopters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string SelectionandEnhancementofWildlifePhotos {
+            get {
+                return ResourceManager.GetString("SelectionandEnhancementofWildlifePhotos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string SimulationofBuildingEnergyUsage {
+            get {
+                return ResourceManager.GetString("SimulationofBuildingEnergyUsage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string SmartCitySimulation {
+            get {
+                return ResourceManager.GetString("SmartCitySimulation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string SwitchgearDigitalInterface {
+            get {
+                return ResourceManager.GetString("SwitchgearDigitalInterface", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string UnitedLaunchAllianceMissionScheduling {
+            get {
+                return ResourceManager.GetString("UnitedLaunchAllianceMissionScheduling", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string VisualPerceptionofSpaceinVR_AR {
+            get {
+                return ResourceManager.GetString("VisualPerceptionofSpaceinVR_AR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string VRTrainingApplication {
+            get {
+                return ResourceManager.GetString("VRTrainingApplication", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string WaterMonitoring {
+            get {
+                return ResourceManager.GetString("WaterMonitoring", resourceCulture);
             }
         }
     }

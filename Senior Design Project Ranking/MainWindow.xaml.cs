@@ -19,11 +19,15 @@ namespace Senior_Design_Project_Ranking
     using System.Collections.ObjectModel;
     using System.ComponentModel;
     using System.IO;
+    using System.Linq;
     using System.Net;
+    using System.Net.Mail;
+    using System.Net.NetworkInformation;
     using System.Net.Sockets;
     using System.Reflection;
     using System.Windows;
     using System.Windows.Controls;
+    using System.Windows.Input;
 
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
@@ -101,52 +105,96 @@ namespace Senior_Design_Project_Ranking
         {
             string message = string.Empty;
 
-            using (StreamWriter outputFile = new StreamWriter(@"./COP4934ProjectRankings.txt"))
+            try
             {
-                outputFile.WriteLine(this.UserName.Text);
-
-                int count = 0;
-                foreach (string line in ProjectRankings)
+                using (StreamWriter outputFile = new StreamWriter(@"./COP4934ProjectRankings.txt"))
                 {
-                    outputFile.WriteLine(count + ": " + line);
-                    count++;
-                }
+                    outputFile.WriteLine(this.UserName.Text);
 
-                message += "Successfully wrote " + count + " rankings to " + Directory.GetCurrentDirectory() + "/COP4934ProjectRankings.txt";
-            }
-
-            if (!OptOut)
-            {
-                using (StreamWriter outputFile = new StreamWriter(@"./AnonymizedProjectRankings.txt"))
-                {
                     int count = 0;
                     foreach (string line in ProjectRankings)
                     {
                         outputFile.WriteLine(count + ": " + line);
                         count++;
                     }
+
+                    message += "Successfully wrote " + count + " rankings to " + Directory.GetCurrentDirectory() + "/COP4934ProjectRankings.txt";
                 }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("An error occurred while exporting rankings to text file.");
+            }
+            
 
-                StreamReader sr = new StreamReader(@"./AnonymizedProjectRankings.txt");
-
-                TcpClient tcpClient = new TcpClient();
-                tcpClient.Connect(new IPEndPoint(IPAddress.Parse("192.168.1.83"), 5442));
-
-                byte[] buffer = new byte[1500];
-                long bytesSent = 0;
-
-                while (bytesSent < sr.BaseStream.Length)
+            if (!OptOut)
+            {
+                try
                 {
-                    int bytesRead = sr.BaseStream.Read(buffer, 0, 1500);
-                    tcpClient.GetStream().Write(buffer, 0, bytesRead);
-                    Console.WriteLine(bytesRead + " bytes sent.");
+                    /*using (StreamWriter outputFile = new StreamWriter(@"./AnonymizedProjectRankings.txt"))
+                    {
+                        int count = 0;
+                        foreach (string line in ProjectRankings)
+                        {
+                            outputFile.WriteLine(count + ": " + line);
+                            count++;
+                        }
+                    }
 
-                    bytesSent += bytesRead;
+                    StreamReader sr = new StreamReader(@"./AnonymizedProjectRankings.txt");
+
+                    TcpClient tcpClient = new TcpClient();
+                    tcpClient.Connect(new IPEndPoint(IPAddress.Parse("99.128.0.174"), 5442));
+
+                    byte[] buffer = new byte[1500];
+                    long bytesSent = 0;
+
+                    while (bytesSent < sr.BaseStream.Length)
+                    {
+                        int bytesRead = sr.BaseStream.Read(buffer, 0, 1500);
+                        tcpClient.GetStream().Write(buffer, 0, bytesRead);
+                        Console.WriteLine(bytesRead + " bytes sent.");
+
+                        bytesSent += bytesRead;
+                    }
+
+                    tcpClient.Close();
+                    */
+
+                    // Get the macaddress to identify duplicate submissions
+                    string macAddr =
+                        (
+                            from nic in NetworkInterface.GetAllNetworkInterfaces()
+                            where nic.OperationalStatus == OperationalStatus.Up
+                            select nic.GetPhysicalAddress().ToString()
+                        ).FirstOrDefault();
+
+                    MailMessage mail = new MailMessage("SeniorDesignRankings@gmail.com", "austin.r.shipley@gmail.com");
+                    mail.Subject = "Senior Design Rankings for " + macAddr;
+
+                    int count = 0;
+                    foreach (string project in ProjectRankings)
+                    {
+                        mail.Body += (count + ": " + project + "\r\n");
+                        count++;
+                    }
+
+                    SmtpClient client = new SmtpClient();
+                    client.Host = "smtp.gmail.com";
+                    client.Port = 587;
+                    client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                    client.EnableSsl = true;
+                    client.UseDefaultCredentials = false;
+                    client.Credentials = new NetworkCredential("SeniorDesignRankings@gmail.com", "tempPassword");
+                    client.Send(mail);
+
+                    message += "\r\nSuccessfully sent report.";
                 }
-
-                tcpClient.Close();
-
-                message += "\r\nSuccessfully sent " + bytesSent + " bytes.";
+                catch (Exception e)
+                {
+                    MessageBox.Show("An error occurred when transferring anonymized report.");
+                    return;
+                }
             }
 
             MessageBox.Show(message);
@@ -211,17 +259,29 @@ namespace Senior_Design_Project_Ranking
 
         private void ProjectsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            // Load project description
+            try
+            {
+                this.ProjectDescriptionTextBox.Text = Properties.Resources.ResourceManager.GetString(((ListBox)sender).SelectedItem.ToString().Replace(" ", "") + ".txt");
+                Console.WriteLine(((ListBox)sender).SelectedItem.ToString().Replace(" ", "") + ".txt");
+                Console.WriteLine(Properties.Resources.ResourceManager.GetString(((ListBox)sender).SelectedItem.ToString().Replace(" ", "") + ".txt"));
+            }
+            catch (Exception error)
+            {
+                // if you ignore it, it goes away
+            }
         }
 
-        private void CustomProjectName_LostFocus(object sender, RoutedEventArgs e)
+        private void CustomProjectTextBox_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
             string customProjectName = ((TextBox)sender).Text;
 
-            if (!string.IsNullOrWhiteSpace(customProjectName))
+            if (e.Key == Key.Enter)
             {
-                ProjectsListBox.Items.Add("Custom: " + customProjectName);
-                ProjectRankings.Insert(0, "Custom: " + customProjectName);
+                if (!string.IsNullOrWhiteSpace(customProjectName))
+                {
+                    ProjectsListBox.Items.Add("Custom: " + customProjectName);
+                    ProjectRankings.Insert(0, "Custom: " + customProjectName);
+                }
             }
         }
 

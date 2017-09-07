@@ -7,7 +7,7 @@ Massively Parallel Computing using Memristors
 Attacking Machine Learning Algorithms
 Computational Methods in Finance
 Limbitless Website and Mobile Apps
-Limbitless 2D/3D Arm Visualization App
+Limbitless 2D_3D Arm Visualization App
 Limbitless Racecar Game
 Selection and Enhancement of Wildlife Photos
 Orlando City Soccer Data Analysis
@@ -17,3 +17,21 @@ Blockchain Medicine Tracking
 Natural Language Processing for Patients
 Code Challenges Website
 NASA Mars Simulation
+Mapping Game Mechanics to Learning Objectives
+Collaboration Learning Game with Data Analysis
+Cultural VR
+Critical Thinking Game
+Andon Signals and Process
+NextGen Asset Tracking
+Robocopters
+Switchgear Digital Interface
+Drone-based Reduced Gravity
+Auto Solar Awning
+VR Training Application
+Balloon-based Reduced Gravity
+Water Monitoring
+Foam Deposition 3D Printer
+ART PROJECTS
+Simulation of Building Energy Usage
+Smart City Simulation
+Visual Perception of Space in VR_AR

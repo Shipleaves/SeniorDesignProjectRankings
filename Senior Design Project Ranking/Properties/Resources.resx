@@ -118,7 +118,118 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="AndonSignalsandProcess" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ProjectDescriptions\AndonSignalsandProcess.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="ARTPROJECTS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ProjectDescriptions\ARTPROJECTS.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="AttackingMachineLearningAlgorithms" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ProjectDescriptions\AttackingMachineLearningAlgorithms.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="AutoSolarAwning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ProjectDescriptions\AutoSolarAwning.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Balloon_basedReducedGravity" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ProjectDescriptions\Balloon-basedReducedGravity.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="BlockchainMedicineTracking" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ProjectDescriptions\BlockchainMedicineTracking.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="CodeChallengesWebsite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ProjectDescriptions\CodeChallengesWebsite.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="CodePark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ProjectDescriptions\CodePark.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="CollaborationLearningGamewithDataAnalysis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ProjectDescriptions\CollaborationLearningGamewithDataAnalysis.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="CompressionReserach" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ProjectDescriptions\CompressionReserach.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="ComputationalMethodsinFinance" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ProjectDescriptions\ComputationalMethodsinFinance.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="CriticalThinkingGame" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ProjectDescriptions\CriticalThinkingGame.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="CulturalVR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ProjectDescriptions\CulturalVR.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="DiscoveringModelsfromBigData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ProjectDescriptions\DiscoveringModelsfromBigData.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="DroneRacingSystem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ProjectDescriptions\DroneRacingSystem.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Drone_basedReducedGravity" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ProjectDescriptions\Drone-basedReducedGravity.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="FoamDeposition3DPrinter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ProjectDescriptions\FoamDeposition3DPrinter.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="LEAPGames" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ProjectDescriptions\LEAPGames.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Limbitless2D_3DArmVisualizationApp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ProjectDescriptions\Limbitless2D_3DArmVisualizationApp.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="LimbitlessRacecarGame" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ProjectDescriptions\LimbitlessRacecarGame.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="LimbitlessWebsiteandMobileApps" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ProjectDescriptions\LimbitlessWebsiteandMobileApps.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="MappingGameMechanicstoLearningObjectives" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ProjectDescriptions\MappingGameMechanicstoLearningObjectives.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="MassivelyParallelComputingusingMemristors" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ProjectDescriptions\MassivelyParallelComputingusingMemristors.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="NASAMarsSimulation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ProjectDescriptions\NASAMarsSimulation.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="NaturalLanguageProcessingforPatients" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ProjectDescriptions\NaturalLanguageProcessingforPatients.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="NextGenAssetTracking" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ProjectDescriptions\NextGenAssetTracking.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="OrlandoCitySoccerDataAnalysis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ProjectDescriptions\OrlandoCitySoccerDataAnalysis.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="PhotoContestApp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ProjectDescriptions\PhotoContestApp.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
   <data name="ProjectList" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Projects\ProjectList.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Robocopters" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ProjectDescriptions\Robocopters.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="SelectionandEnhancementofWildlifePhotos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ProjectDescriptions\SelectionandEnhancementofWildlifePhotos.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="SimulationofBuildingEnergyUsage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ProjectDescriptions\SimulationofBuildingEnergyUsage.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="SmartCitySimulation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ProjectDescriptions\SmartCitySimulation.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="SwitchgearDigitalInterface" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ProjectDescriptions\SwitchgearDigitalInterface.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="UnitedLaunchAllianceMissionScheduling" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ProjectDescriptions\UnitedLaunchAllianceMissionScheduling.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="VisualPerceptionofSpaceinVR_AR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ProjectDescriptions\VisualPerceptionofSpaceinVR_AR.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="VRTrainingApplication" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ProjectDescriptions\VRTrainingApplication.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="WaterMonitoring" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ProjectDescriptions\WaterMonitoring.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
 </root>
