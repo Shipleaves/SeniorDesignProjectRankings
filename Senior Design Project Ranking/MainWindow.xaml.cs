@@ -9,15 +9,18 @@
  * what project to do so that they can see what kind of projects had positive 
  * responses, as well as provide some solace for students who don't get their 
  * first choice because 50% of the class also had the same project as their 
- * first choice. 
+ * first choice.
  */
 
 namespace Senior_Design_Project_Ranking
 {
     using System;
+    using System.Collections;
     using System.Collections.ObjectModel;
     using System.ComponentModel;
     using System.IO;
+    using System.Net;
+    using System.Net.Sockets;
     using System.Reflection;
     using System.Windows;
     using System.Windows.Controls;
@@ -27,25 +30,19 @@ namespace Senior_Design_Project_Ranking
         bool customProject = false;
         bool optOut = false;
         ObservableCollection<string> projectRankings = new ObservableCollection<string>();
-        ObservableCollection<string> projects = new ObservableCollection<string>();
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        #region Properties
-        public ObservableCollection<string> Projects
+        public MainWindow()
         {
-            get
-            {
-                return projects;
-            }
+            InitializeComponent();
 
-            set
-            {
-                projects = value;
-                OnPropertyChanged("Projects");
-            }
+            this.DataContext = this;
+
+            this.LoadProjects();
         }
 
+        #region Properties
         public ObservableCollection<string> ProjectRankings
         {
             get
@@ -88,15 +85,6 @@ namespace Senior_Design_Project_Ranking
         }
         #endregion
 
-        public MainWindow()
-        {
-            InitializeComponent();
-
-            this.DataContext = this;
-
-            this.LoadProjects();
-        }
-
         // Read the list of project names from the embedded text file
         private void LoadProjects()
         {
@@ -104,14 +92,64 @@ namespace Senior_Design_Project_Ranking
 
             foreach (string project in projectNames)
             {
-                this.Projects.Add(project);
+                this.ProjectsListBox.Items.Add(project);
             }
         }
 
         // Create a text file for the user to submit, and optionally send anonymized file for data analysis
         private void Export()
         {
+            string message = string.Empty;
 
+            using (StreamWriter outputFile = new StreamWriter(@"./COP4934ProjectRankings.txt"))
+            {
+                outputFile.WriteLine(this.UserName.Text);
+
+                int count = 0;
+                foreach (string line in ProjectRankings)
+                {
+                    outputFile.WriteLine(count + ": " + line);
+                    count++;
+                }
+
+                message += "Successfully wrote " + count + " rankings to " + Directory.GetCurrentDirectory() + "/COP4934ProjectRankings.txt";
+            }
+
+            if (!OptOut)
+            {
+                using (StreamWriter outputFile = new StreamWriter(@"./AnonymizedProjectRankings.txt"))
+                {
+                    int count = 0;
+                    foreach (string line in ProjectRankings)
+                    {
+                        outputFile.WriteLine(count + ": " + line);
+                        count++;
+                    }
+                }
+
+                StreamReader sr = new StreamReader(@"./AnonymizedProjectRankings.txt");
+
+                TcpClient tcpClient = new TcpClient();
+                tcpClient.Connect(new IPEndPoint(IPAddress.Parse("192.168.1.83"), 5442));
+
+                byte[] buffer = new byte[1500];
+                long bytesSent = 0;
+
+                while (bytesSent < sr.BaseStream.Length)
+                {
+                    int bytesRead = sr.BaseStream.Read(buffer, 0, 1500);
+                    tcpClient.GetStream().Write(buffer, 0, bytesRead);
+                    Console.WriteLine(bytesRead + " bytes sent.");
+
+                    bytesSent += bytesRead;
+                }
+
+                tcpClient.Close();
+
+                message += "\r\nSuccessfully sent " + bytesSent + " bytes.";
+            }
+
+            MessageBox.Show(message);
         }
 
         /* UI Event handlers */
@@ -142,19 +180,27 @@ namespace Senior_Design_Project_Ranking
 
         private void AddProjectButton_Click(object sender, RoutedEventArgs e)
         {
-            foreach (string project in this.ProjectsListBox.SelectedItems)
+            // Copy the selected items to an array because we modify the collection in the foreach
+            string[] selectedItems = new string[this.ProjectsListBox.SelectedItems.Count];
+            this.ProjectsListBox.SelectedItems.CopyTo(selectedItems, 0);
+
+            foreach (string project in selectedItems)
             {
-                this.Projects.Remove(project);
+                this.ProjectsListBox.Items.Remove(project);
                 this.ProjectRankings.Add(project);
             }
         }
 
         private void RemoveProjectButton_Click(object sender, RoutedEventArgs e)
         {
-            foreach (string project in this.ProjectRankingsListBox.SelectedItems)
+            // Copy the selected items to an array because we modify the collection in the foreach
+            string[] selectedItems = new string[this.ProjectRankingsListBox.SelectedItems.Count];
+            this.ProjectRankingsListBox.SelectedItems.CopyTo(selectedItems, 0);
+
+            foreach (string project in selectedItems)
             {
                 this.ProjectRankings.Remove(project);
-                this.Projects.Add(project);
+                this.ProjectsListBox.Items.Add(project);
             }
         }
 
@@ -174,8 +220,8 @@ namespace Senior_Design_Project_Ranking
 
             if (!string.IsNullOrWhiteSpace(customProjectName))
             {
-                Projects.Add("0: " + customProjectName);
-                ProjectRankings.Insert(0, "0: " + customProjectName);
+                ProjectsListBox.Items.Add("Custom: " + customProjectName);
+                ProjectRankings.Insert(0, "Custom: " + customProjectName);
             }
         }
 

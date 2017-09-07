@@ -38,7 +38,7 @@
 
 
 		<Label Content="Project List" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-		<ListBox Name="ProjectsListBox" ItemsSource="{Binding ProjectList}" SelectionChanged="ProjectsListBox_SelectionChanged" Grid.Row="1" Grid.Column="1" Margin="35,25,10,30" SelectionMode="Extended"/>
+		<ListBox Name="ProjectsListBox" ItemsSource="{Binding Path=ProjectList}" SelectionChanged="ProjectsListBox_SelectionChanged" Grid.Row="1" Grid.Column="1" Margin="35,25,10,30" SelectionMode="Extended"/>
 		<Button Content="&lt;-" Click="AddProjectButton_Click" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,25" Width="30"/>
 		<Button Content="-&gt;" Click="RemoveProjectButton_Click" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,25,0,0" Width="30"/>
 
